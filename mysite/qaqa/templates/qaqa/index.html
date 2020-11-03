@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>文档标题</title>
+</head>
+<style>
+    html,
+    body {
+        width: 99%;
+        height: 98%;
+    }
+    
+    .main {
+        background-color: aqua;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .item{
+        background-color: rgb(109, 109, 150);
+        width: 80%;
+        height: 20%;
+        margin-bottom:10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .name{
+        background-color:red;
+        width: 80%;
+        height: 20%;
+    }
+    .href{
+        background-color:yellow;
+        width: 80%;
+        height: 20%;
+    }
+    .desc{
+        background-color:rgb(209, 131, 164);
+        width: 80%;
+        height: 20%;
+    }
+</style>
+
+<body>
+    <!-- {% load static %} -->
+<!-- <img src="{% static "qaqa/ss.jpg" %}" alt="My image"> -->
+    <div class='main' >
+        {% for item in list_url %}
+        <div class='item'>
+            <div class='href'>
+                
+
+                <a href={{ item.href }} >{{ item.name }} </a>
+            </div>
+            <div class='desc'>
+                {{ item.descript }} 
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+
+</html>
+
+
+
+
+<!-- {% for a,b,c in list_url.items %}
+    {{ a }}---{{ b }}----{{c}}
+{% endfor %}
+
+ -->
+<!-- {{list_url}} -->
+
+<!-- 
+ {% for item in list_url %}
+    {{ item.name }} {{ item.href }} {{ item.descript }}
+{% endfor %} -->
+
+
+
+<!-- {% for item in list_url %}
+{{ item.href }} 
+{% endfor %} -->
